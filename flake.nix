@@ -22,20 +22,20 @@
         (inputs.nvf.lib.neovimConfiguration {
           inherit pkgs;
           modules = [
-            ./modules/tabline.nix
-            ./modules/theme.nix
-            ./modules/lsp.nix
-            ./modules/toggleterm.nix
-            ./modules/binds.nix
-            ./modules/statusline.nix
-            ./modules/misc.nix
+            ./modules/keymaps.nix
+            ./modules/languages.nix
             ./modules/options.nix
-            ./modules/neotree.nix
-            ./modules/telescope.nix
+            ./modules/plugins.nix
             {
               config.vim = {
                 viAlias = true;
                 vimAlias = true;
+
+                theme = {
+                  enable = true;
+                  name = "nord";
+                  transparent = false;
+                };
               };
             }
           ];
