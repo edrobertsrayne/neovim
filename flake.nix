@@ -29,6 +29,7 @@
             ./modules/binds.nix
             ./modules/statusline.nix
             ./modules/misc.nix
+            ./modules/options.nix
             {
               config.vim = {
                 viAlias = true;
