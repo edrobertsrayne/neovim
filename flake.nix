@@ -17,29 +17,28 @@
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      packages.default =
-        (inputs.nvf.lib.neovimConfiguration {
-          inherit pkgs;
-          modules = [
-            ./modules/keymaps.nix
-            ./modules/languages.nix
-            ./modules/options.nix
-            ./modules/plugins.nix
-            {
-              config.vim = {
-                viAlias = true;
-                vimAlias = true;
+      neovimConfig = inputs.nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [
+          ./modules/keymaps.nix
+          ./modules/languages.nix
+          ./modules/options.nix
+          ./modules/plugins.nix
+          {
+            config.vim = {
+              viAlias = true;
+              vimAlias = true;
 
-                theme = {
-                  enable = true;
-                  name = "nord";
-                  transparent = false;
-                };
+              theme = {
+                enable = true;
+                name = "nord";
+                transparent = false;
               };
-            }
-          ];
-        })
-        .neovim;
+            };
+          }
+        ];
+      };
+    in {
+      packages.default = neovimConfig.neovim;
     });
 }
