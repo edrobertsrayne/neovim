@@ -22,6 +22,7 @@
         (inputs.nvf.lib.neovimConfiguration {
           inherit pkgs;
           modules = [
+            ./modules/tabline.nix
             {
               config.vim = {
                 viAlias = true;
