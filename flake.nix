@@ -22,15 +22,14 @@
                 vimAlias = true;
                 theme = {
                   enable = true;
-                  name = "catppuccin";
-                  style = "mocha";
+                  name = "nord";
                   transparent = false;
                 };
                 spellcheck.enable = true;
                 statusline = {
                   lualine = {
                     enable = true;
-                    theme = "catppuccin";
+                    theme = "nord";
                   };
                 };
               };
