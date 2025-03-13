@@ -62,6 +62,7 @@
                   whichKey.enable = true;
                   cheatsheet.enable = true;
                 };
+                autopairs.nvim-autopairs.enable = true;
               };
             }
           ];
