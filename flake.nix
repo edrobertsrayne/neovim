@@ -58,6 +58,10 @@
                     lazygit.enable = true;
                   };
                 };
+                binds = {
+                  whichKey.enable = true;
+                  cheatsheet.enable = true;
+                };
               };
             }
           ];
