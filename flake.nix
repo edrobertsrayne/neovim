@@ -31,6 +31,7 @@
             ./modules/misc.nix
             ./modules/options.nix
             ./modules/neotree.nix
+            ./modules/telescope.nix
             {
               config.vim = {
                 viAlias = true;
