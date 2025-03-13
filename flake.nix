@@ -10,11 +10,17 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: {
-    packages.x86_64-linux = {
-      default =
+  outputs = {
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      packages.default =
         (inputs.nvf.lib.neovimConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          inherit pkgs;
           modules = [
             {
               config.vim = {
@@ -37,6 +43,5 @@
           ];
         })
         .neovim;
-    };
-  };
+    });
 }
