@@ -23,47 +23,16 @@
           inherit pkgs;
           modules = [
             ./modules/tabline.nix
+            ./modules/theme.nix
+            ./modules/lsp.nix
+            ./modules/toggleterm.nix
+            ./modules/binds.nix
+            ./modules/statusline.nix
+            ./modules/misc.nix
             {
               config.vim = {
                 viAlias = true;
                 vimAlias = true;
-                theme = {
-                  enable = true;
-                  name = "nord";
-                  transparent = false;
-                };
-                lsp = {
-                  formatOnSave = true;
-                  lightbulb.enable = true;
-                  trouble.enable = true;
-                  lspSignature.enable = true;
-                };
-                languages = {
-                  enableLSP = true;
-                  enableFormat = true;
-                  enableTreesitter = true;
-                  enableExtraDiagnostics = true;
-
-                  nix.enable = true;
-                };
-                spellcheck.enable = true;
-                statusline = {
-                  lualine = {
-                    enable = true;
-                    theme = "nord";
-                  };
-                };
-                terminal = {
-                  toggleterm = {
-                    enable = true;
-                    lazygit.enable = true;
-                  };
-                };
-                binds = {
-                  whichKey.enable = true;
-                  cheatsheet.enable = true;
-                };
-                autopairs.nvim-autopairs.enable = true;
               };
             }
           ];
