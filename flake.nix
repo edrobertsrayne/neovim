@@ -30,6 +30,7 @@
             ./modules/statusline.nix
             ./modules/misc.nix
             ./modules/options.nix
+            ./modules/neotree.nix
             {
               config.vim = {
                 viAlias = true;
